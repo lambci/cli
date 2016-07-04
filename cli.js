@@ -23,6 +23,7 @@ Options:
 --help              Display help about a particular command
 
 Commands:
+info                General info about the LambCI stack
 config              Display/edit config options
 rebuild             Run a particular project build again
 
