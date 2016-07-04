@@ -5,7 +5,8 @@ module.exports = config
 function config(opts) {
   var configName = opts.unset || opts._[1]
   if (!configName || opts.help || opts.h) {
-    return console.log(
+    var isErr = !(opts.help || opts.h)
+    console[isErr ? 'error' : 'log'](
 `
 Usage: lambci config [--project <project>] [--unset] <name> [<value>]
 
@@ -37,6 +38,7 @@ To retrieve the global Slack channel:
 Report bugs at github.com/lambci/cli/issues
 `
     )
+    return process.exit(isErr ? 1 : 0)
   }
 
   if (opts.unset) {

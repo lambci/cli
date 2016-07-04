@@ -9,7 +9,8 @@ function rebuild(opts) {
   var project = opts._[1]
   var buildNum = +opts._[2]
   if (!project || !buildNum || opts.help || opts.h) {
-    return console.log(
+    var isErr = !(opts.help || opts.h)
+    console[isErr ? 'error' : 'log'](
 `
 Usage: lambci rebuild <project> <buildNum>
 
@@ -23,6 +24,7 @@ Options:
 Report bugs at github.com/lambci/cli/issues
 `
     )
+    return process.exit(isErr ? 1 : 0)
   }
 
   lambda.invoke({
