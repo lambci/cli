@@ -1,0 +1,22 @@
+{
+  "name": "lambci-cli",
+  "version": "0.0.1",
+  "description": "A command line tool for administering LambCI",
+  "repository": "lambci/cli",
+  "author": "Michael Hart <michael@soothbooth.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "lambci": "cli.js"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.4.4",
+    "minimist": "^1.2.0"
+  }
+}
