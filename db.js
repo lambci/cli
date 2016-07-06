@@ -26,6 +26,11 @@ exports.editConfig = function(name, value, project, cb) {
 
   var parsed = parsePathStr(name)
 
+  // Convert boolean looking strings
+  if (~['true', 'false'].indexOf(value)) {
+    value = (value === 'true')
+  }
+
   client.update({
     TableName: table,
     Key: {project},
