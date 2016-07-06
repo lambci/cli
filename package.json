@@ -1,6 +1,6 @@
 {
   "name": "lambci-cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A command line tool for administering LambCI",
   "repository": "lambci/cli",
   "author": "Michael Hart <michael@soothbooth.com>",
