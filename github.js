@@ -1,3 +1,4 @@
+var config = require('./config')
 var utils = require('./utils')
 
 var USER_AGENT = 'lambci-cli'
@@ -49,7 +50,7 @@ GithubClient.prototype.createOrUpdateSnsHook = function(awsKey, awsSecret, snsTo
       aws_key: awsKey,
       aws_secret: awsSecret,
       sns_topic: snsTopic,
-      sns_region: process.env.AWS_REGION,
+      sns_region: config.REGION,
     },
   }
 

@@ -26,6 +26,12 @@ rebuild           Run a particular project build again
 Report bugs at github.com/lambci/cli/issues
 ```
 
+## Prerequisites
+
+You'll need to make sure you have your AWS credentials set either in environment variables,
+or in configuration files, in the same format as the
+[AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
+
 ## lambci config
 
 ```console
