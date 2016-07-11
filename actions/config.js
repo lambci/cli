@@ -42,15 +42,19 @@ Report bugs at github.com/lambci/cli/issues
   }
 
   if (opts.unset) {
-    db.deleteConfig(opts.unset, opts.project, function(err) {
+    return db.deleteConfig(opts.unset, opts.project, function(err) {
       if (err) return console.error(err)
     })
-  } else if (opts._[2]) {
-    db.editConfig(opts._[1], opts._[2], opts.project, function(err) {
+  }
+
+  var configNameIx = process.argv.indexOf(configName)
+  var configVal = process.argv[configNameIx + 1]
+  if (configVal) {
+    db.editConfig(configName, configVal, opts.project, function(err) {
       if (err) return console.error(err)
     })
   } else {
-    db.getConfig(opts._[1], opts.project, function(err, value) {
+    db.getConfig(configName, opts.project, function(err, value) {
       if (err) {
         console.error(err)
         return process.exit(1)
