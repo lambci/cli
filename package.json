@@ -16,8 +16,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "aws-sdk": "^2.4.4",
-    "awscred": "^1.2.0",
+    "aws-sdk": "^2.548.0",
+    "awscred": "^1.4.2",
     "minimist": "^1.2.0"
   }
 }

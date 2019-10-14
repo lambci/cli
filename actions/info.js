@@ -8,6 +8,7 @@ module.exports = info
 function info() {
   console.log(`CLI version: ${config.VERSION}`)
   console.log(`Stack name: ${config.STACK}`)
+  console.log(`Region: ${config.REGION}`)
 
   lambda.invoke({
     FunctionName: `${config.STACK}-build`,
@@ -16,7 +17,7 @@ function info() {
     }),
   }, function(err, data) {
     if (err && err.code == 'ResourceNotFoundException') {
-      err = new Error(`LambCI stack '${config.STACK}' does not exist or has no Lambda function`)
+      err = new Error(`LambCI stack '${config.STACK}' does not exist or has no Lambda function named '${config.STACK}-build'`)
     }
     if (err) {
       console.error(err)
